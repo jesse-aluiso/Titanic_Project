@@ -27,5 +27,8 @@ from yellowbrick.model_selection import (
 df = pd.read_csv("train.csv")
 orig_df = df.copy()
 
-df.head()
-df.dtypes
+print(df.head())
+print(df.dtypes)
+
+profile = ProfileReport(df, title="Titanic Dataset Profiling Report")
+profile.to_file("titanic_report.html")
